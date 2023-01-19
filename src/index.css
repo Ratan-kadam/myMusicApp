@@ -70,7 +70,49 @@ flex-grow: 0.2;
     border-radius: 50%;
     border: 2px solid grey;
     padding: 0;
-    
+}
+
+.menu {
+ display: flex;
+ max-width: 400px;
+ background-color: aliceblue;
+ flex-direction: column;
+}
+
+.menu__item {
+ flex-grow: 1;
+}
+
+/* container css */ 
+ 
+.container {
+    padding-left: 5px;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 500px 200px;
+    background-color: var(--main-bg-color);
+
+    grid-template-areas:
+    "nav  nav      nav   nav nav"
+    "menu content content  content content"
+    "menu content  content content content"
+    ;
+}
+
+#nav {
+    grid-area: nav;
+    background-color:blueviolet;
+}
+
+#menu {
+    grid-area: menu;
+    background-color: blue;
+}
+
+#content {
+    grid-area: content;
+    background-color: aqua;
 }
 
 

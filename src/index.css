@@ -1,4 +1,47 @@
+:root {
+    --main-bg-color: black;
+    --main-text-color: white;
+    --youTube-symbol-color: red;
+}
+
+body {
+    margin: 0;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: "Roboto", sans-serif;
+  }
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 0px 0 0 10px;
+}
+
+.nav:hover {
+  cursor: pointer;
+  background-color: rgb(87, 86, 83);
+}
+
+.youtube {
+    display: flex;
+    gap: 10px;
+}
+
+.youtube .youtube_symbol {
+    top: 3px;
+    margin-left: 10px;
+    font-size: larger;
+    position: relative;
+    color: var(--youTube-symbol-color);
+}
+
+
+
+
 

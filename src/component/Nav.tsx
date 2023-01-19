@@ -18,7 +18,25 @@ export default function Nav() {
                 </div>
                 <div className="youtube">
                     <BsYoutube className="youtube_symbol" />
-                    <span className="youtube-text">YouTube</span>
+                    <span className="youtube-text">MyYoutube</span>
+                </div>
+                <input className="nav__input"></input>
+                <div className="nav__micro">
+                    <TiMicrophone />
+                </div>
+                <div className="nav__rest">
+                    <div className="nav__micro">
+                        <BsCameraVideo />
+                    </div>
+                    <div className="nav__micro">
+                        <IoAppsSharp />
+                    </div>
+                    <div className="nav__micro nav__micro--bell">
+                        <BsBell />
+                    </div>
+                    <div className="nav__micro nav__micro--user">
+                        RK
+                    </div>
                 </div>
             </div>
         </React.Fragment>

@@ -12,33 +12,65 @@ body {
   }
 
 
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 .nav {
-    height: 35px;
+    height: 55px;
+    background-color: rgb(31, 12, 80);;
     display: flex;
+    gap: 10px;
     align-items: center;
     padding: 0px 0 0 10px;
+    width: 100%;
 }
 
-.nav:hover {
-  cursor: pointer;
-  background-color: rgb(87, 86, 83);
+.nav__icon {
+  flex-grow: 0.1;
+}
+
+.youtube {
+flex-grow: 0.2;
+}
+
+.nav__input {
+    flex-grow: 3;
 }
 
 .youtube {
     display: flex;
     gap: 10px;
-}
+    align-items: center;
+} 
 
 .youtube .youtube_symbol {
     top: 3px;
     margin-left: 10px;
-    font-size: larger;
-    position: relative;
+    font-size: 50px;
     color: var(--youTube-symbol-color);
+}
+
+.nav .nav__micro {
+    flex-grow: 1;
+}
+
+.nav__rest {
+    font-size: larger;
+    flex-grow: 0.5;
+    display: flex;
+    max-width: 200px;
+    padding: 50px;
+}
+
+.nav__micro--user {
+    max-width: 20px;;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid grey;
+    padding: 0;
+    
 }
 
 

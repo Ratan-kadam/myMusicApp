@@ -14,10 +14,9 @@ export default function App() {
            <Nav></Nav>
         </div>
         <div id="menu">
-          menu
+          <Menu />
         </div>
         <div id="content">
-          content
           <BrowserRouter>
             <Routes>
             <Route path="/" element={<MyHome />} />
@@ -26,6 +25,8 @@ export default function App() {
             </Routes>
           </BrowserRouter>
           </div>
+        </div>
+        <div id="footer">
         </div>
     </React.Fragment>
   );

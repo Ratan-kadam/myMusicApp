@@ -86,13 +86,11 @@ flex-grow: 0.2;
 /* container css */ 
  
 .container {
-    padding-left: 5px;
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 50px 500px 200px;
+    grid-template-rows: 0.5fr 8fr 1fr;
     background-color: var(--main-bg-color);
-
     grid-template-areas:
     "nav  nav      nav   nav nav"
     "menu content content  content content"
@@ -102,17 +100,34 @@ flex-grow: 0.2;
 
 #nav {
     grid-area: nav;
-    background-color:blueviolet;
 }
 
 #menu {
+    max-height: 100vh;
+    overflow: scroll;
     grid-area: menu;
-    background-color: blue;
 }
 
 #content {
     grid-area: content;
     background-color: aqua;
+}
+
+.menu__tile {
+    padding-left: 10px;
+    background-color: var(--main-bg-color);
+    display: flex;
+    gap: 5px;
+    color: var(--main-text-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Roboto","Arial",sans-serif;
+    line-height: 4rem;
+    font-weight: 200;
+}
+
+.menu__tile:first-child {
+    padding-top: 20px;
 }
 
 

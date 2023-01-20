@@ -164,6 +164,47 @@ flex-grow: 0.2;
     left: 50%;
 }
 
+.video__title {
+    position: relative;
+    width: 100%;
+    left: 20%;
+    font-size: larger;
+}
+
+.watch_current_details {
+    padding: 10px;
+    display: flex;
+    justify-items: center;
+    color: var(--disabled);
+    background-color: var(--main-bg-color);
+    gap: 30px;
+}
+
+.video__section {
+    grid-area: 'video';
+}
+
+.video_recommendation {
+    grid-area: 'reco';
+    max-height: 1000px;
+    overflow: scroll;
+}
+
+.comment_section {
+    grid-area: 'comments';
+}
+
+.watch_grid {
+    display: grid;
+    background-color: var(--main-bg-color);
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 70vh 30vh 30vh ;
+    grid-template-areas:
+    "video     reco"
+    "video     reco"
+    "comments  reco";
+}
+
 
 
 

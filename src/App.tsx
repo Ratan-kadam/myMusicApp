@@ -9,6 +9,7 @@ import Menu from "./component/Menu";
 export default function App() {
   return (
     <React.Fragment>
+      <BrowserRouter>
       <div className="container">
         <div id="nav">
            <Nav></Nav>
@@ -17,17 +18,17 @@ export default function App() {
           <Menu />
         </div>
         <div id="content">
-          <BrowserRouter>
+
             <Routes>
             <Route path="/" element={<MyHome />} />
               <Route path="/search" element={<Search />} />
               <Route path="/watch/:id" element={<Watch />} />
             </Routes>
-          </BrowserRouter>
-          </div>
+      </div>
         </div>
         <div id="footer">
         </div>
+      </BrowserRouter>
     </React.Fragment>
   );
 }

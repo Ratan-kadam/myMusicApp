@@ -5,9 +5,7 @@ import { BsYoutube, BsCameraVideo, BsBell } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoAppsSharp } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { useAppDispatch, useAppSelector } from "../store/hooks";
-// import { changeSearchTerm, clearSearchTerm, clearVideos } from "../store";
-// import { getSearchPageVideos } from "../store/reducers/getSearchPageVideos";
+import { watch } from "fs";
 
 export default function Nav() {
     return (
@@ -16,10 +14,12 @@ export default function Nav() {
                 <div className="nav__icon"> 
                     <GiHamburgerMenu />
                 </div>
-                <div className="youtube">
-                    <BsYoutube className="youtube_symbol" />
-                    <span className="youtube-text">MyYoutube</span>
-                </div>
+                <Link to={`/`}>
+                    <div className="youtube">
+                        <BsYoutube className="youtube_symbol" />
+                        <span className="youtube-text">MyYoutube</span>
+                    </div>
+                </Link>
                 <input className="nav__input"></input>
                 <div className="nav__micro">
                     <TiMicrophone />

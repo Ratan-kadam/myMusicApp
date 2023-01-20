@@ -26,9 +26,11 @@ body {
   flex-grow: 0.1;
 }
 
-.youtube {
+.youtube, .youtube:visited {
 flex-grow: 0.2;
+color: var(--main-text-color);
 }
+
 
 .nav__input {
     flex-grow: 3;

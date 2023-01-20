@@ -4,6 +4,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { getVideoDetails } from "../store/reducers/getVideoDetails";
 import { getRecommendedVideos } from "../store/reducers/getRecommendedVideos";
+// import { DashboardTile} from '../component/DashboardTile';
+import { Link } from "react-router-dom";
 
 export default function Watch() {
     const { id } = useParams();
@@ -36,7 +38,9 @@ export default function Watch() {
         <div className="video_recommendation">
          <React.Fragment>  
             {recommendedVideos.map(video => {
-                return (<img src={video?.videoThumbnail} />)
+                return (<Link to={`/watch/${video?.videoId}`}>
+                <img src={video?.videoThumbnail} alt={`/watch/${video?.videoId}`} />)
+                </Link>)
             })}
             </React.Fragment> 
         </div>

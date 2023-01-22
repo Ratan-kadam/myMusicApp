@@ -111,7 +111,7 @@ color: var(--main-text-color);
 }
 
 .menu__tile {
-    padding-left: 10px;
+    padding-left: 30%;
     background-color: var(--main-bg-color);
     display: flex;
     gap: 5px;

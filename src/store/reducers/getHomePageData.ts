@@ -15,3 +15,12 @@ export const getDashboardData = createAsyncThunk('dashboardData', async (isNext:
     isNext ? `pageToken=${1}` : ""
   }`
 })
+
+
+export const getMySearch = createAsyncThunk('youtube/mySearch', async (data: string, thunkAPI) => {
+  const { dispatch }  = thunkAPI;
+  console.log("got into actions")
+  return {
+    searchTerm: data,
+  }
+})

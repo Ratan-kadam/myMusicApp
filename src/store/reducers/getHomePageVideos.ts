@@ -6,10 +6,15 @@ import { parseData } from "../../utils";
 import { YOUTUBE_API_URL } from "../../utils/constants";
 
 const API_KEY = process.env.REACT_APP_YOTUBE_DATA_API_KEY;
+type input = {
+  isNext: boolean,
+  searchTerm: string,
+};
 
 export const getHomePageVideos = createAsyncThunk(
   "youtubeApp/homePageVidoes",
-  async (isNext: boolean, thunkAPI) => {
+  async (input: input, thunkAPI) => {
+    const { isNext, searchTerm = "java script" } = input;
     const { getState, dispatch } = thunkAPI;
     const {
       youtubeApp: { nextPageToken: nextPageTokenFromState, videos },
@@ -18,7 +23,7 @@ export const getHomePageVideos = createAsyncThunk(
     const {
       data: { items, nextPageToken },
     } = await axios.get(
-      `${YOUTUBE_API_URL}/search?maxResults=20&q="javascript"&key=${API_KEY}&part=snippet&type=video&${
+      `${YOUTUBE_API_URL}/search?maxResults=20&q=${searchTerm}&key=${API_KEY}&part=snippet&type=video&${
         isNext ? `pageToken=${nextPageTokenFromState}` : ""
       }`
     );

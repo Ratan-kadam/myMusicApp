@@ -9,15 +9,17 @@ import DasboardTile from "../component/DashboardTile";
 export default function MyHome() {
   const dispatch = useAppDispatch();
   const videos = useAppSelector((state) => state.youtubeApp.videos);
+  const mySearch = useAppSelector((state) => state.youtubeApp.searchTerm);
+  
   console.log("rendering now:");
   console.log(videos);
 
   useEffect(() => {
-    dispatch(getHomePageVideos(false));
+    dispatch(getHomePageVideos({isNext: false, searchTerm: mySearch}));
     return () => {
       dispatch(clearVideos());
     };
-  }, [dispatch]);
+  }, [dispatch, mySearch]);
 
   return (
     <React.Fragment>
@@ -25,7 +27,7 @@ export default function MyHome() {
         dataLength={videos.length}
         hasMore={videos.length < 100}
         height={"100vh"}
-        next={() => dispatch(getHomePageVideos(false))}
+        next={() => dispatch(getHomePageVideos({isNext: true, searchTerm: mySearch}))}
         loader={<div className="loader">loading...</div>}
       >
         <div className="dashboard">

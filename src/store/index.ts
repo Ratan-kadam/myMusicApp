@@ -5,11 +5,12 @@ import { getHomePageVideos } from "./reducers/getHomePageVideos";
 import { getRecommendedVideos } from "./reducers/getRecommendedVideos";
 import { getSearchPageVideos } from "./reducers/getSearchPageVideos";
 import { getVideoDetails } from "./reducers/getVideoDetails";
+import { getMySearch } from "./reducers/getHomePageData";
 
 const initialState: InitialState = {
   videos: [],
   currentPlaying: null,
-  searchTerm: "",
+  searchTerm: "java",
   searchResults: [],
   nextPageToken: null,
   recommendedVideos: [],
@@ -44,6 +45,10 @@ const YoutubeSlice = createSlice({
     });
     builder.addCase(getRecommendedVideos.fulfilled, (state, action) => {
       state.recommendedVideos = action.payload.parsedData;
+    });
+    builder.addCase(getMySearch.fulfilled, (state, action) => {
+      console.log(action)
+      state.searchTerm = action.payload.searchTerm;
     });
   },
 });
